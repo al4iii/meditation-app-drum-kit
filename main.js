@@ -1,4 +1,4 @@
-const keys = document.querySelectorAll('.key');
+let keys = document.querySelectorAll('.key');
 
 let playSound = (e) => {
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); 
@@ -14,4 +14,4 @@ let removeTransition = (e) => {
 };
 
 document.body.addEventListener('keydown', playSound);
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+document.body.addEventListener('transitionend', removeTransition);
